@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CRUD</title>
+    <link rel="stylesheet" href="CRUD.css" />
+  </head>
+  <body>
+    <div class="Container">
+      <div class="head">
+        <h2>CRUD</h2>
+        <p>Project to management the products</p>
+      </div>
+      <div class="inputs">
+        <input type="text" id="title" placeholder="Title" required />
+        <div class="prices">
+          <input type="number" id="price" placeholder="Price" required />
+          <input type="number" id="taxes" placeholder="Taxes" />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="ads"
+            placeholder="ads"
+          />
+          <input
+            onkeyup="getTotal()"
+            type="number"
+            id="discount"
+            placeholder="discount"
+          />
+          <small id="Total"></small>
+        </div>
+        <input type="number" id="count" placeholder="count" required />
+        <input type="text" id="category" placeholder="category" required />
+        <button id="submit">Create</button>
+      </div>
+      <div class="outputs">
+        <div class="searchBlock">
+          <input
+            onkeyup="search(this.value)"
+            type="text"
+            id="search"
+            placeholder="Search"
+          />
+          <div class="btnsearch">
+            <button onclick="getsearchmood(this.id)" id="searchTitle">
+              Search By Title
+            </button>
+            <button onclick="getsearchmood(this.id)" id="searchCategory">
+              Search By Category
+            </button>
+          </div>
+        </div>
+        <div id="deleteAll"></div>
+        <table>
+          <tr>
+            <th>Id</th>
+            <th>Title</th>
+            <th>Price</th>
+            <th>Taxes</th>
+            <th>Ads</th>
+            <th>discount</th>
+            <th>total</th>
+            <th>Count</th>
+            <th>Category</th>
+            <th>Update</th>
+            <th>delete</th>
+          </tr>
+          <tbody class="show"></tbody>
+        </table>
+      </div>
+    </div>
+    <script src="CRUD.JS"></script>
+  </body>
+</html>
